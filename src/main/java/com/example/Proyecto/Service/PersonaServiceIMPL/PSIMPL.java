@@ -1,6 +1,6 @@
 package com.example.Proyecto.Service.PersonaServiceIMPL;
 
-import com.example.Proyecto.Entity.Paciente;
+import com.example.Proyecto.Entity.Persona;
 import com.example.Proyecto.Repository.PersonaRepo;
 import com.example.Proyecto.Service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,28 +13,28 @@ public class PSIMPL implements PersonaService {
     @Autowired
     private PersonaRepo repo;
     @Override
-    public List<Paciente> ConsultarPaciente() {
-        return (List<Paciente>)this.repo.findAll();
+    public List<Persona> ConsulterPersona() {
+        return (List<Persona>)this.repo.findAll();
     }
 
     @Override
-    public Paciente CrearPaciente(Paciente paciente) {
-        paciente.setEmail(paciente.getEmail());
-        return this.repo.save(paciente);
+    public Persona CrearPersona(Persona persona) {
+        persona.setEmail(persona.getEmail());
+        return this.repo.save(persona);
     }
 
     @Override
-    public Paciente ModificarPaciente(Paciente paciente) {
-        return this.repo.save(paciente);
+    public Persona ModificarPersona(Persona persona) {
+        return this.repo.save(persona);
     }
 
     @Override
-    public Paciente BuscarPaciente(int id) {
+    public Persona BuscarPersona(int id) {
         return this.repo.findById(id).get();
     }
 
     @Override
-    public void EliminarPaciente(int id) {
+    public void EliminatorPersona(int id) {
         this.repo.deleteById(id);
 
     }
