@@ -13,7 +13,7 @@ public class PSIMPL implements PersonaService {
     @Autowired
     private PersonaRepo repo;
     @Override
-    public List<Persona> ConsulterPersona() {
+    public List<Persona> ConsultarPersona() {
         return (List<Persona>)this.repo.findAll();
     }
 
@@ -34,7 +34,7 @@ public class PSIMPL implements PersonaService {
     }
 
     @Override
-    public void EliminatorPersona(int id) {
+    public void EliminarPersona(int id) {
         this.repo.deleteById(id);
 
     }

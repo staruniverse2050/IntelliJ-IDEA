@@ -17,7 +17,7 @@ public class Controlador {
     @GetMapping
     @RequestMapping(value = "ConsultarPersonas",method = RequestMethod.GET)
     public ResponseEntity<?>ConsultarPersonas(){
-        List<Persona>listarPersona=this.impl.ConsulterPersona();
+        List<Persona>listarPersona=this.impl.ConsultarPersona();
         return ResponseEntity.ok(listarPersona);
 
     }
@@ -43,7 +43,7 @@ public class Controlador {
     @DeleteMapping
     @RequestMapping(value = "EliminarPersonas/{id}",method = RequestMethod.DELETE)
     public ResponseEntity<?>EliminarPersonas(@PathVariable int id){
-        this.impl.EliminatorPersona(id);
+        this.impl.EliminarPersona(id);
         return ResponseEntity.ok().build();
     }
 
